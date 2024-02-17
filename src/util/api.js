@@ -24,7 +24,7 @@ api.interceptors.response.use(
   },
   async (error) => {
     if (axios.isAxiosError(error) && error.response) {
-      const { config, response } = error;
+      const { response } = error;
       if (response.data.status === 401) {
         window.location.href = "/auth/login";
       }
