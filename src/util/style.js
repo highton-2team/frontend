@@ -29,144 +29,171 @@ export const theme = {
 
     font: {
       "Title 1/B": {
+        "font-family": "Pretendard",
         "font-weight": 700,
         "line-height": "56px",
         "font-size": "40px",
       },
       "Title 1/M": {
+        "font-family": "Pretendard",
         "font-weight": 500,
         "line-height": "56px",
         "font-size": "40px",
       },
       "Title 1/R": {
+        "font-family": "Pretendard",
         "font-weight": 400,
         "line-height": "56px",
         "font-size": "40px",
       },
 
       "Title 2/B": {
+        "font-family": "Pretendard",
         "font-weight": 700,
         "line-height": "48px",
         "font-size": "32px",
       },
       "Title 2/B": {
+        "font-family": "Pretendard",
         "font-weight": 500,
         "line-height": "48px",
         "font-size": "32px",
       },
       "Title 2/B": {
+        "font-family": "Pretendard",
         "font-weight": 400,
         "line-height": "48px",
         "font-size": "32px",
       },
 
       "Headline 1/B": {
+        "font-family": "Pretendard",
         "font-weight": 700,
         "line-height": "32px",
         "font-size": "24px",
       },
       "Headline 1/M": {
+        "font-family": "Pretendard",
         "font-weight": 500,
         "line-height": "32px",
         "font-size": "24px",
       },
       "Headline 1/R": {
+        "font-family": "Pretendard",
         "font-weight": 400,
         "line-height": "32px",
         "font-size": "24px",
       },
 
       "Headline 2/B": {
+        "font-family": "Pretendard",
         "font-weight": 700,
         "line-height": "28px",
         "font-size": "20px",
       },
       "Headline 2/M": {
+        "font-family": "Pretendard",
         "font-weight": 500,
         "line-height": "28px",
         "font-size": "20px",
       },
       "Headline 2/R": {
+        "font-family": "Pretendard",
         "font-weight": 400,
         "line-height": "28px",
         "font-size": "20px",
       },
 
       "Headline 3/B": {
+        "font-family": "Pretendard",
         "font-weight": 700,
         "line-height": "26px",
         "font-size": "18px",
       },
       "Headline 3/M": {
+        "font-family": "Pretendard",
         "font-weight": 500,
         "line-height": "26px",
         "font-size": "18px",
       },
       "Headline 3/R": {
+        "font-family": "Pretendard",
         "font-weight": 400,
         "line-height": "26px",
         "font-size": "18px",
       },
 
       "Body/B": {
+        "font-family": "Pretendard",
         "font-weight": 700,
         "line-height": "24px",
         "font-size": "16px",
       },
       "Body/M": {
+        "font-family": "Pretendard",
         "font-weight": 500,
         "line-height": "24px",
         "font-size": "16px",
       },
       "Body/R": {
+        "font-family": "Pretendard",
         "font-weight": 400,
         "line-height": "24px",
         "font-size": "16px",
       },
 
       "Subhead/B": {
+        "font-family": "Pretendard",
         "font-weight": 700,
         "line-height": "20px",
         "font-size": "14px",
       },
       "Subhead/M": {
+        "font-family": "Pretendard",
         "font-weight": 500,
         "line-height": "20px",
         "font-size": "14px",
       },
       "Subhead/R": {
+        "font-family": "Pretendard",
         "font-weight": 400,
         "line-height": "20px",
         "font-size": "14px",
       },
 
       "caption 1/B": {
+        "font-family": "Pretendard",
         "font-weight": 700,
         "line-height": "18px",
         "font-size": "12px",
       },
       "caption 1/B": {
+        "font-family": "Pretendard",
         "font-weight": 500,
         "line-height": "18px",
         "font-size": "12px",
       },
       "caption 1/B": {
+        "font-family": "Pretendard",
         "font-weight": 400,
         "line-height": "18px",
         "font-size": "12px",
       },
 
       "caption 2/B": {
+        "font-family": "Pretendard",
         "font-weight": 700,
         "line-height": "16px",
         "font-size": "10px",
       },
       "caption 2/B": {
+        "font-family": "Pretendard",
         "font-weight": 500,
         "line-height": "16px",
         "font-size": "10px",
       },
       "caption 2/B": {
+        "font-family": "Pretendard",
         "font-weight": 400,
         "line-height": "16px",
         "font-size": "10px",
