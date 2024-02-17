@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Done } from "@mui/icons-material";
 import styled, { css } from "styled-components";
+import axios from "axios";
 
 export const CheckboxStyle = styled.div`
   display: inline-block;
@@ -55,12 +56,10 @@ export default function Task({ id, todo, completed }) {
         todoId: id,
         completed: checked,
       };
-      const res = await fetch(`/api/todolist/updateCompleted`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+      const { res } = await axios({
+        method: "post",
+        url: `/api/todolist/updateCompleted`,
+        data: JSON.stringify(data),
       });
       const result = await res.json();
       if (result.status === 200) setChecked(!checked);

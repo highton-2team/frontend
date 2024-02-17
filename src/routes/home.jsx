@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Message from "../components/message";
 import Task from "../components/task";
+import axios from "axios";
 
 const Wrapper = styled.div`
   display: flex;
@@ -194,12 +195,10 @@ export default function Home() {
   const getResponse = async () => {
     try {
       const data = { message: prompt };
-      const res = await fetch(`/api/todolist/chatbot`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+      const { res } = await axios({
+        method: "post",
+        url: `/api/todolist/chatbot`,
+        data: JSON.stringify(data),
       });
       const result = await res.json();
       const response = {
@@ -213,7 +212,10 @@ export default function Home() {
   };
   const getTodo = async () => {
     try {
-      const res = await fetch(`/api/todolist`);
+      const { res } = await axios({
+        method: "get",
+        url: `/api/todolist`,
+      });
       const result = await res.json();
       setGoal(result.data);
       setTodos(goal.todos);
