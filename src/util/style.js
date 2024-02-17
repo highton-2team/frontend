@@ -2,7 +2,7 @@ export const theme = {
   lightTheme: {
     color: {
       Black: "#0F0F0F",
-      white: "FFFFFF",
+      white: "#FFFFFF",
 
       Blue10: "#00091A",
       Blue9: "#001C4D",
