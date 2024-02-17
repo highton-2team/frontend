@@ -1,10 +1,10 @@
 import "./App.css";
-import Toast from "./components/Toast/toast";
+import Mentoring from "./routes/Mentoring/mentoring";
 
 function App() {
   return (
     <>
-      <Toast />
+      <Mentoring />
     </>
   );
 }
