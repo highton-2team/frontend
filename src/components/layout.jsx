@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
+import Aside from "./common/Aside";
 
 const Wrapper = styled.div`
   display: flex;
@@ -46,6 +47,10 @@ const Text = styled.text`
   margin-right: 32px;
 `;
 
+const LayoutStyle = styled.div`
+  margin-left: 240px;
+`;
+
 export default function Layout() {
   return (
     <>
@@ -74,7 +79,10 @@ export default function Layout() {
             </MenuItem>
           </Menu>
         </Navbar>
-        <Outlet />
+        <Aside />
+        <LayoutStyle>
+          <Outlet />
+        </LayoutStyle>
       </Wrapper>
     </>
   );
