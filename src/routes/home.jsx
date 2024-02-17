@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Message from "../components/message";
+import ChooseBox from "../components/common/choosebox";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -89,6 +90,7 @@ export default function Home() {
   const [todos, setTodos] = useState([]);
   const [prompt, setPrompt] = useState("");
   const [isLoading, setLoading] = useState(false);
+  const onClick = () => {};
   const onChange = (e) => {
     setPrompt(e.target.value);
   };
@@ -115,7 +117,15 @@ export default function Home() {
         <NewDream></NewDream>
       </SideBar>
       <Main>
-        <Todo></Todo>
+        <Todo>
+          <ChooseBox
+            type="checkbox"
+            list={[]}
+            clickEvent={onClick}
+            name="test"
+            gap={10}
+          />
+        </Todo>
         <Chat>
           {isChatting ? (
             <ChatBox>
