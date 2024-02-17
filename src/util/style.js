@@ -200,9 +200,4 @@ export const theme = {
       },
     },
   },
-
-  darkTheme: {
-    color: {},
-    font: {},
-  },
 };
