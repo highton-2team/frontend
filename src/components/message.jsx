@@ -8,7 +8,7 @@ const MyMessage = styled.div`
   font-size: 14px;
   font-weight: 500;
   justify-content: right;
-  display: inline-flex;
+  display: inline-block;
   max-width: 400px;
   padding: 20px;
   border: 1px solid #4d8eff;
@@ -22,8 +22,7 @@ const BotMessage = styled.div`
   color: #f1f2f4;
   font-size: 14px;
   font-weight: 500;
-  justify-content: left;
-  display: inline-flex;
+  display: inline-block;
   max-width: 400px;
   padding: 20px;
   border: 1px solid #9da3af;
@@ -31,7 +30,21 @@ const BotMessage = styled.div`
   margin-bottom: 20px;
 `;
 
+const Text = styled.div`
+  display: inline-block;
+`;
+
 export default function Message({ talker, message }) {
-  if (talker === "bot") return <BotMessage>{message}</BotMessage>;
-  else return <MyMessage>{message}</MyMessage>;
+  if (talker === "bot")
+    return (
+      <BotMessage>
+        <Text>{message}</Text>
+      </BotMessage>
+    );
+  else
+    return (
+      <MyMessage>
+        <Text>{message}</Text>
+      </MyMessage>
+    );
 }

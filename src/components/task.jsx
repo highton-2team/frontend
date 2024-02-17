@@ -6,8 +6,8 @@ export const CheckboxStyle = styled.div`
   display: inline-block;
   border: 1px solid #9da3af;
   border-radius: 4px;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 
   display: flex;
   justify-content: center;
@@ -40,8 +40,8 @@ const ChooseLayout = styled.div`
 `;
 
 const Text = styled.div`
-  width: 200px;
-  font-size: 14px;
+  display: inline-block;
+  font-size: 13px;
 `;
 
 export default function Task({ id, todo, completed }) {

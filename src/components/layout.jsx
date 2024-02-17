@@ -31,14 +31,15 @@ const Menu = styled.div`
 `;
 
 const MenuItem = styled.div`
-  cursor: pointer;
   margin: 16px, 16px;
   &:hover {
+    cursor: pointer;
     opacity: 0.7;
   }
 `;
 
 const Home = styled.div`
+  cursor: pointer;
   margin-right: auto;
 `;
 
@@ -47,7 +48,9 @@ const Text = styled.text`
   color: black;
 `;
 
-const LayoutStyle = styled.div``;
+const LayoutStyle = styled.div`
+  overflow: hidden;
+`;
 
 export default function Layout() {
   return (

@@ -15,13 +15,14 @@ const Main = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
-  padding-left: 200px;
+  margin-left: 250px;
 `;
 
 const Todo = styled.div`
   display: flex;
   position: relative;
   top: 50px;
+  right: 100px;
   height: 100%;
   margin-bottom: auto;
   flex-direction: column;
@@ -39,13 +40,12 @@ const Chat = styled.div`
 const Guide = styled.div`
   display: flex;
   position: relative;
-  margin-bottom: 380px;
+  margin-bottom: 373px;
   flex-direction: column;
 `;
 
 const ChatBox = styled.div`
   display: flex;
-  gap: 10px;
   flex-direction: column;
   overflow-y: scroll;
   &::-webkit-scrollbar {
@@ -63,6 +63,7 @@ const ChatList = styled.div`
 const Form = styled.form`
   display: flex;
   position: relative;
+  width: 700px;
   bottom: 20px;
   flex-direction: column;
 `;
@@ -101,10 +102,6 @@ const Text = styled.text`
   color: gray;
 `;
 
-const RecommendText = styled.text`
-  font-size: 10px;
-`;
-
 const Recommend = styled.div`
   display: flex;
   flex-direction: column;
@@ -115,19 +112,25 @@ const Recommend = styled.div`
 
 const RecommendButton = styled.button`
   background-color: white;
-  height: 25px;
-  width: 200px;
+  height: 30px;
+  width: 220px;
   color: #4d8eff;
   padding: 0;
   outline: none;
 `;
 
+const RecommendText = styled.text`
+  font-size: 12px;
+`;
+
 const Goal = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: left;
 `;
 
 const GoalText = styled.text`
+  display: inline-block;
   width: 100px;
   color: #4d8eff;
   font-size: 16px;
@@ -135,9 +138,17 @@ const GoalText = styled.text`
   margin-bottom: 10px;
 `;
 
+const DueText = styled.text`
+  display: inline-block;
+  width: 100px;
+  color: #4d8eff;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+`;
+
 const TaskBox = styled.div`
   display: flex;
-  gap: 10px;
   flex-direction: column;
   overflow-y: scroll;
   &::-webkit-scrollbar {
@@ -171,18 +182,19 @@ export default function Home() {
     if (!isChatting) setIsChatting(true);
     try {
       setLoading(true);
+      setPrompt("");
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       setChats((chats) => [...chats, { talker: "human", message: prompt }]);
-      fetchChat(prompt);
+      getResponse();
     } catch (e) {
       console.log(e);
     } finally {
-      setPrompt("");
       setLoading(false);
     }
   };
-  const fetchChat = async (message) => {
+  const getResponse = async () => {
     try {
-      const data = { message: message };
+      const data = { message: prompt };
       const res = await fetch(`/api/todolist/chatbot`, {
         method: "POST",
         headers: {
@@ -191,17 +203,16 @@ export default function Home() {
         body: JSON.stringify(data),
       });
       const result = await res.json();
-    } catch (e) {
-      console.log(e);
-    } finally {
       const response = {
         talker: "bot",
         message: result.data,
       };
       setChats((chats) => [...chats, response]);
+    } catch (e) {
+      console.log(e);
     }
   };
-  const fetchTodo = async () => {
+  const getTodo = async () => {
     try {
       const res = await fetch(`/api/todolist`);
       const result = await res.json();
@@ -372,14 +383,17 @@ export default function Home() {
       },
     ]);
     // dummy data
-    fetchTodo();
+    getTodo();
   }, []);
   return (
     <Wrapper>
       <Main>
         <Todo>
           <Goal>
-            <GoalText>목표: ~</GoalText>
+            <GoalText>{`목표: ${goal.goal ?? "없음"}`}</GoalText>
+            <DueText>{`${
+              goal.endDate ? `${goal.endDate}까지` : "미정"
+            }`}</DueText>
           </Goal>
           <TaskBox>
             <TaskList>
@@ -436,7 +450,10 @@ export default function Home() {
               maxLength={180}
               onChange={onChange}
               value={prompt}
-              placeholder="목표를 입력해 주세요."
+              placeholder={
+                isLoading ? "답변 생성중..." : "목표를 입력해 주세요."
+              }
+              disabled={isLoading}
             />
           </Form>
         </Chat>
