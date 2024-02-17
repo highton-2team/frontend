@@ -30,8 +30,6 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 12.5em;
-  height: 1em;
   border-radius: 8px;
   background: ${theme.lightTheme.color.Gray8};
   padding: 1%;
