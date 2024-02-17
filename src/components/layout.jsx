@@ -6,9 +6,9 @@ const Wrapper = styled.div`
   display: flex;
   width: 100vh;
   flex-direction: column;
-  justify-content: center;
   height: 100%;
   width: 100%;
+  padding-left: 100px;
 `;
 
 const Navbar = styled.div`
@@ -47,9 +47,7 @@ const Text = styled.text`
   margin-right: 32px;
 `;
 
-const LayoutStyle = styled.div`
-  margin-left: 240px;
-`;
+const LayoutStyle = styled.div``;
 
 export default function Layout() {
   return (

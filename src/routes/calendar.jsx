@@ -1,3 +1,5 @@
+import CalendarComponent from "../components/common/calendar/CalendarComponent";
+
 export default function Calendar() {
-  return <h1>Calendar</h1>;
+  return <CalendarComponent />;
 }
