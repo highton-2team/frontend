@@ -23,9 +23,12 @@ const router = createBrowserRouter([
         path: "mentoring",
         element: <Mentoring />,
       },
+      {
+        path: "login",
+        element: <Login />,
+      },
     ],
   },
-  { path: "/login", element: <Login /> },
 ]);
 
 function App() {
