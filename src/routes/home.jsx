@@ -142,7 +142,7 @@ const DueText = styled.text`
   display: inline-block;
   width: 100px;
   color: #4d8eff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   margin-bottom: 10px;
 `;
@@ -183,7 +183,6 @@ export default function Home() {
     try {
       setLoading(true);
       setPrompt("");
-      await new Promise((resolve) => setTimeout(resolve, 2000));
       setChats((chats) => [...chats, { talker: "human", message: prompt }]);
       getResponse();
     } catch (e) {
@@ -233,153 +232,8 @@ export default function Home() {
     setTodos([
       {
         id: 1,
-        todo: "something to do 1",
+        todo: `something to do 1`,
         completed: true,
-      },
-      {
-        id: 2,
-        todo: "something to do 2",
-        completed: false,
-      },
-      {
-        id: 3,
-        todo: "something to do 3",
-        completed: true,
-      },
-      {
-        id: 4,
-        todo: "something to do 4",
-        completed: true,
-      },
-      {
-        id: 5,
-        todo: "something to do 5",
-        completed: false,
-      },
-      {
-        id: 1,
-        todo: "something to do 1",
-        completed: true,
-      },
-      {
-        id: 2,
-        todo: "something to do 2",
-        completed: false,
-      },
-      {
-        id: 3,
-        todo: "something to do 3",
-        completed: true,
-      },
-      {
-        id: 4,
-        todo: "something to do 4",
-        completed: true,
-      },
-      {
-        id: 5,
-        todo: "something to do 5",
-        completed: false,
-      },
-      {
-        id: 1,
-        todo: "something to do 1",
-        completed: true,
-      },
-      {
-        id: 2,
-        todo: "something to do 2",
-        completed: false,
-      },
-      {
-        id: 3,
-        todo: "something to do 3",
-        completed: true,
-      },
-      {
-        id: 4,
-        todo: "something to do 4",
-        completed: true,
-      },
-      {
-        id: 5,
-        todo: "something to do 5",
-        completed: false,
-      },
-      {
-        id: 1,
-        todo: "something to do 1",
-        completed: true,
-      },
-      {
-        id: 2,
-        todo: "something to do 2",
-        completed: false,
-      },
-      {
-        id: 3,
-        todo: "something to do 3",
-        completed: true,
-      },
-      {
-        id: 4,
-        todo: "something to do 4",
-        completed: true,
-      },
-      {
-        id: 5,
-        todo: "something to do 5",
-        completed: false,
-      },
-      {
-        id: 1,
-        todo: "something to do 1",
-        completed: true,
-      },
-      {
-        id: 2,
-        todo: "something to do 2",
-        completed: false,
-      },
-      {
-        id: 3,
-        todo: "something to do 3",
-        completed: true,
-      },
-      {
-        id: 4,
-        todo: "something to do 4",
-        completed: true,
-      },
-      {
-        id: 5,
-        todo: "something to do 5",
-        completed: false,
-      },
-      {
-        id: 1,
-        todo: "something to do 1",
-        completed: true,
-      },
-      {
-        id: 2,
-        todo: "something to do 2",
-        completed: false,
-      },
-      {
-        id: 3,
-        todo: "something to do 3",
-        completed: true,
-      },
-      {
-        id: 4,
-        todo: "something to do 4",
-        completed: true,
-      },
-      {
-        id: 5,
-        todo: "something to do 5",
-        completed: false,
       },
     ]);
     // dummy data
