@@ -1,12 +1,15 @@
 import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
+import Aside from "./common/Aside";
 
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
   flex-direction: column;
-  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding-left: 100px;
 `;
 
 const Navbar = styled.div`
@@ -44,6 +47,8 @@ const Text = styled.text`
   color: black;
 `;
 
+const LayoutStyle = styled.div``;
+
 export default function Layout() {
   return (
     <>
@@ -72,7 +77,10 @@ export default function Layout() {
             </MenuItem>
           </Menu>
         </Navbar>
-        <Outlet />
+        <Aside />
+        <LayoutStyle>
+          <Outlet />
+        </LayoutStyle>
       </Wrapper>
     </>
   );
