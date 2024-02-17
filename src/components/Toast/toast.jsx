@@ -17,7 +17,6 @@ const Toast = ({ title }) => {
           <S.Back src={back} onClick={handleBackClick} />
         </S.Container>
       )}
-      ;
     </>
   );
 };
