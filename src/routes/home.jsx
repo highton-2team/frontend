@@ -7,45 +7,63 @@ const Wrapper = styled.div`
   display: flex;
   height: 100%;
   width: 100%;
-  z-index: -1;
 `;
 
 const Main = styled.div`
   display: flex;
+  flex-direction: row;
   height: 100%;
   justify-content: center;
   align-items: center;
-  padding-left: 300px;
+  padding-left: 200px;
 `;
 
-const Todo = styled.div``;
+const Todo = styled.div`
+  display: flex;
+  position: relative;
+  top: 50px;
+  height: 100%;
+  margin-bottom: auto;
+  flex-direction: column;
+`;
 
 const Chat = styled.div`
   display: flex;
-  flex-direction: column;
+  position: relative;
+  top: 70px;
   height: 100%;
-  justify-content: center;
+  margin-bottom: auto;
+  flex-direction: column;
 `;
 
 const Guide = styled.div`
   display: flex;
   position: relative;
-  bottom: 130px;
-  margin-bottom: auto;
+  margin-bottom: 380px;
   flex-direction: column;
 `;
 
 const ChatBox = styled.div`
   display: flex;
-  position: relative;
+  gap: 10px;
   flex-direction: column;
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const ChatList = styled.div`
+  display: flex;
+  height: 600px;
+  flex-direction: column;
+  justify-content: left;
 `;
 
 const Form = styled.form`
   display: flex;
   position: relative;
-  top: 230px;
+  bottom: 20px;
   flex-direction: column;
 `;
 
@@ -104,14 +122,45 @@ const RecommendButton = styled.button`
   outline: none;
 `;
 
+const Goal = styled.div`
+  display: flex;
+  justify-content: left;
+`;
+
+const GoalText = styled.text`
+  width: 100px;
+  color: #4d8eff;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+`;
+
+const TaskBox = styled.div`
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const TaskList = styled.div`
+  display: flex;
+  height: 700px;
+  flex-direction: column;
+  justify-content: left;
+`;
+
 export default function Home() {
   const [isChatting, setIsChatting] = useState(false);
   const [chats, setChats] = useState([]);
   const [todos, setTodos] = useState([]);
   const [prompt, setPrompt] = useState("");
   const [isLoading, setLoading] = useState(false);
+  const [goal, setGoal] = useState({});
 
-  const username = "test";
+  const username = "test"; // do auth user later
 
   const onChange = (e) => {
     setPrompt(e.target.value);
@@ -156,37 +205,11 @@ export default function Home() {
     try {
       const res = await fetch(`/api/todolist`);
       const result = await res.json();
-      setTodos(result.data.todos);
+      setGoal(result.data);
+      setTodos(goal.todos);
     } catch (e) {
       console.log(e);
     }
-  };
-  const updateTodo = async (id, completed) => {
-    try {
-      const data = {
-        todoId: id,
-        completed: completed,
-      };
-      const res = await fetch(`/api/todolist/updateCompleted`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      const result = res.json();
-      fetchTodo();
-    } catch (e) {
-      console.log(e);
-    }
-  };
-  const cancelGoal = async () => {
-    await fetch(`/api/todolist/cancel`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
   };
   useEffect(() => {
     setChats([
@@ -195,48 +218,185 @@ export default function Home() {
         message: "🔥 불과 맞서 싸우는 소방관이 되고 싶어요!",
       },
       { talker: "bot", message: "소방관이 되려면 어떻게 해야할까요?" },
-      {
-        talker: "test",
-        message: "🔥 불과 맞서 싸우는 소방관이 되고 싶어요!",
-      },
-      { talker: "bot", message: "소방관이 되려면 어떻게 해야할까요?" },
-      { talker: "bot", message: "소방관이 되려면 어떻게 해야할까요?" },
-      { talker: "bot", message: "소방관이 되려면 어떻게 해야할까요?" },
     ]);
     setTodos([
       {
         id: 1,
-        todo: "something to do",
-        completed: false,
+        todo: "something to do 1",
+        completed: true,
       },
       {
         id: 2,
-        todo: "something to do",
+        todo: "something to do 2",
         completed: false,
       },
       {
         id: 3,
-        todo: "something to do",
+        todo: "something to do 3",
+        completed: true,
+      },
+      {
+        id: 4,
+        todo: "something to do 4",
+        completed: true,
+      },
+      {
+        id: 5,
+        todo: "something to do 5",
+        completed: false,
+      },
+      {
+        id: 1,
+        todo: "something to do 1",
+        completed: true,
+      },
+      {
+        id: 2,
+        todo: "something to do 2",
+        completed: false,
+      },
+      {
+        id: 3,
+        todo: "something to do 3",
+        completed: true,
+      },
+      {
+        id: 4,
+        todo: "something to do 4",
+        completed: true,
+      },
+      {
+        id: 5,
+        todo: "something to do 5",
+        completed: false,
+      },
+      {
+        id: 1,
+        todo: "something to do 1",
+        completed: true,
+      },
+      {
+        id: 2,
+        todo: "something to do 2",
+        completed: false,
+      },
+      {
+        id: 3,
+        todo: "something to do 3",
+        completed: true,
+      },
+      {
+        id: 4,
+        todo: "something to do 4",
+        completed: true,
+      },
+      {
+        id: 5,
+        todo: "something to do 5",
+        completed: false,
+      },
+      {
+        id: 1,
+        todo: "something to do 1",
+        completed: true,
+      },
+      {
+        id: 2,
+        todo: "something to do 2",
+        completed: false,
+      },
+      {
+        id: 3,
+        todo: "something to do 3",
+        completed: true,
+      },
+      {
+        id: 4,
+        todo: "something to do 4",
+        completed: true,
+      },
+      {
+        id: 5,
+        todo: "something to do 5",
+        completed: false,
+      },
+      {
+        id: 1,
+        todo: "something to do 1",
+        completed: true,
+      },
+      {
+        id: 2,
+        todo: "something to do 2",
+        completed: false,
+      },
+      {
+        id: 3,
+        todo: "something to do 3",
+        completed: true,
+      },
+      {
+        id: 4,
+        todo: "something to do 4",
+        completed: true,
+      },
+      {
+        id: 5,
+        todo: "something to do 5",
+        completed: false,
+      },
+      {
+        id: 1,
+        todo: "something to do 1",
+        completed: true,
+      },
+      {
+        id: 2,
+        todo: "something to do 2",
+        completed: false,
+      },
+      {
+        id: 3,
+        todo: "something to do 3",
+        completed: true,
+      },
+      {
+        id: 4,
+        todo: "something to do 4",
+        completed: true,
+      },
+      {
+        id: 5,
+        todo: "something to do 5",
         completed: false,
       },
     ]);
-    fetchChat();
+    // dummy data
     fetchTodo();
   }, []);
   return (
     <Wrapper>
       <Main>
         <Todo>
-          {todos.map((todo) => {
-            return <Task {...todo} />;
-          })}
+          <Goal>
+            <GoalText>목표: ~</GoalText>
+          </Goal>
+          <TaskBox>
+            <TaskList>
+              {todos.map((todo) => {
+                return <Task {...todo} />;
+              })}
+            </TaskList>
+          </TaskBox>
         </Todo>
         <Chat>
           {isChatting ? (
             <ChatBox>
-              {chats.map((chat) => {
-                return <Message {...chat} />;
-              })}
+              <ChatList>
+                {chats.map((chat) => {
+                  return <Message {...chat} />;
+                })}
+              </ChatList>
             </ChatBox>
           ) : (
             <Guide>
