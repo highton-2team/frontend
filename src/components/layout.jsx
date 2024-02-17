@@ -3,11 +3,10 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
-  width: 100vh;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-  width: 100%;
 `;
 
 const Navbar = styled.div`
@@ -23,9 +22,9 @@ const Menu = styled.div`
   flex-direction: row;
   background-color: white;
   width: 100%;
-  justify-content: flex-start;
-  align-items: center;
   padding: 16px 16px;
+  gap: 30px;
+  border-bottom: 1px solid gray;
 `;
 
 const MenuItem = styled.div`
@@ -43,7 +42,6 @@ const Home = styled.div`
 const Text = styled.text`
   font-size: 12px;
   color: black;
-  margin-right: 32px;
 `;
 
 export default function Layout() {
