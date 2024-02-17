@@ -1,3 +1,3 @@
-export default function Task(id, todo, completed) {
-  return;
+export default function Task({ id, todo, completed }) {
+  return <></>;
 }
