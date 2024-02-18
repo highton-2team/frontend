@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./routes/home";
 import Calendar from "./routes/calendar";
-import Login from "./routes/login";
 import "./App.css";
 import Mentoring from "./routes/Mentoring/mentoring";
 import Write from "./routes/Write/write";

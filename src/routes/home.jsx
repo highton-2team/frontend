@@ -199,15 +199,15 @@ export default function Home() {
   const getResponse = async () => {
     try {
       const data = { message: prompt };
-      const { res } = await axios({
+      const res = await axios({
         method: "post",
-        url: `/api/todolist/chatbot`,
+        url: `http://192.168.10.196/api/todolist/chatbot/${prompt}`,
         data: JSON.stringify(data),
       });
-      const result = await res.json();
+      const result = await res.data;
       const response = {
         talker: "bot",
-        message: result.data,
+        message: result,
       };
       setChats((chats) => [...chats, response]);
     } catch (e) {
@@ -218,7 +218,7 @@ export default function Home() {
     try {
       const { res } = await axios({
         method: "get",
-        url: `/api/todolist`,
+        url: `http://192.168.10.196/api/todolist`,
       });
       const result = await res.json();
       setGoal(result.data);

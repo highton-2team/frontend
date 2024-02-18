@@ -58,7 +58,7 @@ export default function Task({ id, todo, completed }) {
       };
       const { res } = await axios({
         method: "post",
-        url: `/api/todolist/updateCompleted`,
+        url: `http://192.168.10.196/api/todolist/updateCompleted`,
         data: JSON.stringify(data),
       });
       const result = await res.json();
