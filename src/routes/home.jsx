@@ -16,7 +16,7 @@ const Main = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
-  margin-left: 250px;
+  margin-left: 320px;
 `;
 
 const Todo = styled.div`
@@ -34,6 +34,7 @@ const Chat = styled.div`
   position: relative;
   top: 70px;
   height: 100%;
+  width: 100%;
   margin-bottom: auto;
   flex-direction: column;
 `;
@@ -41,7 +42,8 @@ const Chat = styled.div`
 const Guide = styled.div`
   display: flex;
   position: relative;
-  margin-bottom: 373px;
+  right: 30px;
+  margin-bottom: 370px;
   flex-direction: column;
 `;
 
@@ -56,7 +58,7 @@ const ChatBox = styled.div`
 
 const ChatList = styled.div`
   display: flex;
-  height: 600px;
+  height: 612px;
   flex-direction: column;
   justify-content: left;
 `;
@@ -78,8 +80,7 @@ const Input = styled.input`
   color: black;
   background-color: white;
   height: 60px;
-  min-width: 600px;
-  width: auto;
+  width: 600px;
   resize: none;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
