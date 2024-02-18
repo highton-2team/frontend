@@ -172,7 +172,7 @@ export default function Home() {
   const [isLoading, setLoading] = useState(false);
   const [goal, setGoal] = useState({});
 
-  const username = "test"; // do auth user later
+  const username = "test"; // TODO: user authentication
 
   const onChange = (e) => {
     setPrompt(e.target.value);
@@ -224,21 +224,6 @@ export default function Home() {
     }
   };
   useEffect(() => {
-    setChats([
-      {
-        talker: "test",
-        message: "🔥 불과 맞서 싸우는 소방관이 되고 싶어요!",
-      },
-      { talker: "bot", message: "소방관이 되려면 어떻게 해야할까요?" },
-    ]);
-    setTodos([
-      {
-        id: 1,
-        todo: `something to do 1`,
-        completed: true,
-      },
-    ]);
-    // dummy data
     getTodo();
   }, []);
   return (
