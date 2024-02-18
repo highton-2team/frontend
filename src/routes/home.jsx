@@ -172,7 +172,7 @@ export default function Home() {
   const [isLoading, setLoading] = useState(false);
   const [goal, setGoal] = useState({});
 
-  const username = "test"; // TODO: user authentication
+  const username = "사용자"; // TODO: user authentication
 
   const onChange = (e) => {
     setPrompt(e.target.value);

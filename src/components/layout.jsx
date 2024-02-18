@@ -41,6 +41,12 @@ const Home = styled.div`
   margin-right: auto;
 `;
 
+const Title = styled.text`
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+`;
+
 const Text = styled.text`
   font-size: 12px;
   color: black;
@@ -58,7 +64,7 @@ export default function Layout() {
           <Menu>
             <Home>
               <Link to="/">
-                <Text>Home</Text>
+                <Title>바꿈</Title>
               </Link>
             </Home>
             <MenuItem>
