@@ -16,9 +16,10 @@ const Main = styled.div`
   display: flex;
   flex-direction: row;
   height: 100%;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  margin-left: 250px;
+  margin-left: 320px;
 `;
 
 const Todo = styled.div`
@@ -36,6 +37,7 @@ const Chat = styled.div`
   position: relative;
   top: 70px;
   height: 100%;
+  width: 100%;
   margin-bottom: auto;
   flex-direction: column;
 `;
@@ -43,7 +45,8 @@ const Chat = styled.div`
 const Guide = styled.div`
   display: flex;
   position: relative;
-  margin-bottom: 373px;
+  right: 30px;
+  margin-bottom: 370px;
   flex-direction: column;
 `;
 
@@ -57,8 +60,15 @@ const ChatBox = styled.div`
 `;
 
 const ChatList = styled.div`
+<<<<<<< HEAD
   height: 600px;
   position: relative;
+=======
+  display: flex;
+  height: 612px;
+  flex-direction: column;
+  justify-content: left;
+>>>>>>> 0a972288ef0abcf5580b781bff0b910a44913c74
 `;
 
 const Form = styled.form`
@@ -78,8 +88,7 @@ const Input = styled.input`
   color: black;
   background-color: white;
   height: 60px;
-  min-width: 600px;
-  width: auto;
+  width: 600px;
   resize: none;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -228,6 +237,10 @@ export default function Home() {
   }, []);
   return (
     <>
+<<<<<<< HEAD
+=======
+      <Aside />
+>>>>>>> 0a972288ef0abcf5580b781bff0b910a44913c74
       <Layout />
       <Wrapper>
         <Main>
