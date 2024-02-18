@@ -287,6 +287,7 @@ export default function Home() {
           )}
           <Form onSubmit={onSubmit}>
             <Input
+              required
               rows={1}
               maxLength={180}
               onChange={onChange}
