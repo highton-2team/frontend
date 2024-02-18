@@ -4,6 +4,7 @@ import Message from "../components/message";
 import Task from "../components/task";
 import axios from "axios";
 import Aside from "../components/common/Aside";
+import Layout from "../components/layout.jsx";
 
 const Wrapper = styled.div`
   display: flex;
@@ -230,6 +231,7 @@ export default function Home() {
   return (
     <>
       <Aside />
+      <Layout />
       <Wrapper>
         <Main>
           <Todo>
