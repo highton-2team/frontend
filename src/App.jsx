@@ -1,38 +1,25 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Layout from "./components/layout";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Home from "./routes/home";
 import Calendar from "./routes/calendar";
-import Mentoring from "./routes/Mentoring/mentoring";
 import Login from "./routes/login";
 import "./App.css";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "",
-        element: <Home />,
-      },
-      {
-        path: "calendar",
-        element: <Calendar />,
-      },
-      {
-        path: "mentoring",
-        element: <Mentoring />,
-      },
-      {
-        path: "login",
-        element: <Login />,
-      },
-    ],
-  },
-]);
-
+import Mentoring from "./routes/Mentoring/mentoring";
+import Write from "./routes/Write/write";
+import Post from "./routes/Post/post";
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Mentoring" element={<Mentoring />} />
+          <Route path="/write" element={<Write />} />
+          <Route path="/Post" element={<Post />} />
+        </Routes>
+      </Router>
+    </>
+  );
 }
 
 export default App;

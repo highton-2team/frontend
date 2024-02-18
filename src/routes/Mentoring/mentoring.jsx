@@ -1,9 +1,13 @@
 import * as S from "./style.js";
-import basic from "../../assets/basic.svg";
 import data from "./data.json";
+import Layout from "../../components/layout.jsx";
+import { useNavigate } from "react-router-dom";
+
 const Mentoring = () => {
+  const navigate = useNavigate();
   return (
     <>
+      <Layout />
       <S.Container>
         <S.Aside>
           <S.AsideTitle>목록</S.AsideTitle>
@@ -20,13 +24,13 @@ const Mentoring = () => {
           성공과 실패를 겪어본 선배님들의 조언을 들어보세요!
         </S.MainContent>
         <S.SubContent>"소방관"</S.SubContent>
-        <S.WriteBtn>글 작성하기</S.WriteBtn>
+        <S.WriteBtn onClick={() => navigate("/write")}>글 작성하기</S.WriteBtn>
         <S.PostBox>
           {data.map((item, index) => {
             return (
               <>
-                <S.Post key={index}>
-                  <S.PostImg src={basic} />
+                <S.Post onClick={() => navigate("/post")} key={index}>
+                  ;
                   <S.PostContent>
                     <S.PostTitle>{item.title}</S.PostTitle>
                     <S.PostSubTitle>{item.subtitle}</S.PostSubTitle>
@@ -40,7 +44,7 @@ const Mentoring = () => {
               </>
             );
           })}
-          ;
+          ;x
         </S.PostBox>
       </S.Main>
     </>

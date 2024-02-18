@@ -84,7 +84,7 @@ export const MainContent = styled.p`
 export const SubContent = styled.p`
   position: fixed;
   background-color: white;
-  padding-bottom: 2%;
+  padding-bottom: 1%;
   top: 12%;
   left: 20%;
   width: 100%;
@@ -108,6 +108,7 @@ export const WriteBtn = styled.button`
   background-color: #4d8eff;
   ${theme.lightTheme.font.SubheadB};
 `;
+
 export const PostBox = styled.div`
   background-color: white;
   display: grid;
@@ -119,23 +120,18 @@ export const PostBox = styled.div`
 
 export const Post = styled.div`
   background-color: white;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   flex-direction: row;
   width: 35em;
-  height: 10em;
   flex-shrink: 0;
   border: 1px solid var(--border-gray-1, #d5d7dd);
 `;
 
-export const PostImg = styled.img`
-  width: 7em;
-  height: 7em;
-  padding-left: 2%;
-`;
-
 export const PostTitle = styled.div`
   display: flex;
+  font-weight: 700;
   align-items: flex-start;
   ${theme.lightTheme.font.Headline3B};
   color: ${theme.lightTheme.color.Black};
@@ -144,6 +140,7 @@ export const PostTitle = styled.div`
 export const PostSubTitle = styled.div`
   display: flex;
   align-items: flex-start;
+  font-weight: 700;
   color: #9da3af;
   ${theme.lightTheme.font.caption1B};
   margin-bottom: 5%;
@@ -151,16 +148,20 @@ export const PostSubTitle = styled.div`
 
 export const Content = styled.div`
   color: ${theme.lightTheme.color.Black};
-  ${theme.lightTheme.font.caption1B};
+  ${theme.lightTheme.font.SubheadM};
+  width: 250%;
+  text-align: start;
 `;
 
 export const PostDate = styled.div`
   display: flex;
   align-items: flex-start;
   color: #9da3af;
-  ${theme.lightTheme.font.caption1B};
+  ${theme.lightTheme.font.SubheadB};
+  font-weight: 700;
   margin-bottom: 1%;
   background-color: white;
+  width: 25%;
 `;
 
 export const PostTag = styled.div`
@@ -171,6 +172,8 @@ export const PostTag = styled.div`
   color: #06e000;
   ${theme.lightTheme.font.SubheadM};
   width: 5em;
+  margin-top: 2%;
+  padding: 3px 4px 3px 4px;
 `;
 
 export const PostContent = styled.div`
@@ -178,8 +181,10 @@ export const PostContent = styled.div`
   align-items: flex-start;
   flex-direction: column;
   align-self: flex-start;
-  background-color: white;
+  width: 100%;
+  ${theme.lightTheme.font.SubheadB};
   padding: 4%;
+  height: 100%;
 `;
 
 export const Box = styled.div`
@@ -187,6 +192,7 @@ export const Box = styled.div`
   flex-direction: row;
   justify-content: center;
   background-color: white;
+  width: 100%;
 `;
 
 export const MainBox = styled.div`
