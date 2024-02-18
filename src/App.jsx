@@ -2,7 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./components/layout";
 import Home from "./routes/home";
 import Calendar from "./routes/calendar";
-import Mentoring from "./routes/mentoring";
+import Mentoring from "./routes/Mentoring/mentoring";
 import Login from "./routes/login";
 import "./App.css";
 
