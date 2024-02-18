@@ -43,7 +43,7 @@ const Post = () => {
                 <S.Date>2023년 7월 19일 17:34</S.Date>
               </S.Box>
               <S.CommentContent>
-                와 너무 좋네여 꿀팀 감사합니다
+                와 너무 좋네여 꿀팁 감사합니다
               </S.CommentContent>
             </S.Comment2>
           </S.Answer>

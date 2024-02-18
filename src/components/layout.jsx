@@ -4,10 +4,9 @@ import Aside from "./common/Aside";
 
 const Wrapper = styled.div`
   display: flex;
-  width: 100vh;
-  flex-direction: column;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  flex-direction: column;
   padding-left: 100px;
 `;
 
@@ -24,30 +23,38 @@ const Menu = styled.div`
   flex-direction: row;
   background-color: white;
   width: 100%;
-  justify-content: flex-start;
-  align-items: center;
   padding: 16px 16px;
+  gap: 30px;
+  border-bottom: 1px solid gray;
 `;
 
 const MenuItem = styled.div`
-  cursor: pointer;
   margin: 16px, 16px;
   &:hover {
+    cursor: pointer;
     opacity: 0.7;
   }
 `;
 
 const Home = styled.div`
+  cursor: pointer;
   margin-right: auto;
+`;
+
+const Title = styled.text`
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
 `;
 
 const Text = styled.text`
   font-size: 12px;
   color: black;
-  margin-right: 32px;
 `;
 
-const LayoutStyle = styled.div``;
+const LayoutStyle = styled.div`
+  overflow: hidden;
+`;
 
 export default function Layout() {
   return (
@@ -57,7 +64,7 @@ export default function Layout() {
           <Menu>
             <Home>
               <Link to="/">
-                <Text>Home</Text>
+                <Title>바꿈</Title>
               </Link>
             </Home>
             <MenuItem>
