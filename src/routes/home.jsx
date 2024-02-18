@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Message from "../components/message";
 import Task from "../components/task";
 import axios from "axios";
+import Aside from "../components/common/Aside";
 
 const Wrapper = styled.div`
   display: flex;
@@ -227,79 +228,82 @@ export default function Home() {
     getTodo();
   }, []);
   return (
-    <Wrapper>
-      <Main>
-        <Todo>
-          <Goal>
-            <GoalText>{`목표: ${goal.goal ?? "없음"}`}</GoalText>
-            <DueText>{`${
-              goal.endDate ? `${goal.endDate}까지` : "미정"
-            }`}</DueText>
-          </Goal>
-          <TaskBox>
-            <TaskList>
-              {todos.map((todo) => {
-                return <Task {...todo} />;
-              })}
-            </TaskList>
-          </TaskBox>
-        </Todo>
-        <Chat>
-          {isChatting ? (
-            <ChatBox>
-              <ChatList>
-                {chats.map((chat) => {
-                  return <Message {...chat} />;
+    <>
+      <Aside />
+      <Wrapper>
+        <Main>
+          <Todo>
+            <Goal>
+              <GoalText>{`목표: ${goal.goal ?? "없음"}`}</GoalText>
+              <DueText>{`${
+                goal.endDate ? `${goal.endDate}까지` : "미정"
+              }`}</DueText>
+            </Goal>
+            <TaskBox>
+              <TaskList>
+                {todos.map((todo) => {
+                  return <Task {...todo} />;
                 })}
-              </ChatList>
-            </ChatBox>
-          ) : (
-            <Guide>
-              <Title>계획을 시작해 보세요!</Title>
-              <Text>{`${username}님의 꿈을 이루기 위한 구체적인 계획을`}</Text>
-              <Text>{`ChatGPT가 계획해줘요!`}</Text>
-              <Recommend>
-                <RecommendButton
-                  onClick={() => {
-                    setPrompt("🔥 불과 맞서 싸우는 소방관이 되고 싶어요!");
-                  }}
-                >
-                  <RecommendText>
-                    🔥 불과 맞서 싸우는 소방관이 되고 싶어요!
-                  </RecommendText>
-                </RecommendButton>
-                <RecommendButton
-                  onClick={() => {
-                    setPrompt("🖌️ 디자이너가 되고 싶어요!");
-                  }}
-                >
-                  <RecommendText>🖌️ 디자이너가 되고 싶어요!</RecommendText>
-                </RecommendButton>
-                <RecommendButton
-                  onClick={() => {
-                    setPrompt("🤖 개발자가 되고 싶어요!");
-                  }}
-                >
-                  <RecommendText>🤖 개발자가 되고 싶어요!</RecommendText>
-                </RecommendButton>
-              </Recommend>
-            </Guide>
-          )}
-          <Form onSubmit={onSubmit}>
-            <Input
-              required
-              rows={1}
-              maxLength={180}
-              onChange={onChange}
-              value={prompt}
-              placeholder={
-                isLoading ? "답변 생성중..." : "목표를 입력해 주세요."
-              }
-              disabled={isLoading}
-            />
-          </Form>
-        </Chat>
-      </Main>
-    </Wrapper>
+              </TaskList>
+            </TaskBox>
+          </Todo>
+          <Chat>
+            {isChatting ? (
+              <ChatBox>
+                <ChatList>
+                  {chats.map((chat) => {
+                    return <Message {...chat} />;
+                  })}
+                </ChatList>
+              </ChatBox>
+            ) : (
+              <Guide>
+                <Title>계획을 시작해 보세요!</Title>
+                <Text>{`${username}님의 꿈을 이루기 위한 구체적인 계획을`}</Text>
+                <Text>{`ChatGPT가 계획해줘요!`}</Text>
+                <Recommend>
+                  <RecommendButton
+                    onClick={() => {
+                      setPrompt("🔥 불과 맞서 싸우는 소방관이 되고 싶어요!");
+                    }}
+                  >
+                    <RecommendText>
+                      🔥 불과 맞서 싸우는 소방관이 되고 싶어요!
+                    </RecommendText>
+                  </RecommendButton>
+                  <RecommendButton
+                    onClick={() => {
+                      setPrompt("🖌️ 디자이너가 되고 싶어요!");
+                    }}
+                  >
+                    <RecommendText>🖌️ 디자이너가 되고 싶어요!</RecommendText>
+                  </RecommendButton>
+                  <RecommendButton
+                    onClick={() => {
+                      setPrompt("🤖 개발자가 되고 싶어요!");
+                    }}
+                  >
+                    <RecommendText>🤖 개발자가 되고 싶어요!</RecommendText>
+                  </RecommendButton>
+                </Recommend>
+              </Guide>
+            )}
+            <Form onSubmit={onSubmit}>
+              <Input
+                required
+                rows={1}
+                maxLength={180}
+                onChange={onChange}
+                value={prompt}
+                placeholder={
+                  isLoading ? "답변 생성중..." : "목표를 입력해 주세요."
+                }
+                disabled={isLoading}
+              />
+            </Form>
+          </Chat>
+        </Main>
+      </Wrapper>
+    </>
   );
 }

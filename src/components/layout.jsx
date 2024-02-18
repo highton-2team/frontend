@@ -8,11 +8,13 @@ const Wrapper = styled.div`
   height: 100%;
   flex-direction: column;
   padding-left: 100px;
+  background-color: white;
 `;
 
 const Navbar = styled.div`
   display: flex;
   justify-content: center;
+  background-color: white;
 `;
 
 const Menu = styled.div`

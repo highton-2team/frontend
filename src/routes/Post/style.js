@@ -7,11 +7,12 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 15%;
 `;
 
 export const TextBox = styled.div`
   position: absolute;
-  top: 3%;
+  top: 4%;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -161,5 +162,5 @@ export const AnswerTitle = styled.p`
 export const Comment2 = styled.p`
   display: flex;
   flex-direction: column;
-  padding: 1% 0 0 2%
+  padding: 1% 0 0 2%;
 `;

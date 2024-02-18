@@ -1,11 +1,13 @@
 import * as S from "./style.js";
 import data from "./data.json";
+import Layout from "../../components/layout.jsx";
 import { useNavigate } from "react-router-dom";
 
 const Mentoring = () => {
   const navigate = useNavigate();
   return (
     <>
+      <Layout />
       <S.Container>
         <S.Aside>
           <S.AsideTitle>목록</S.AsideTitle>

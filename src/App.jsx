@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./components/layout";
+
 import Home from "./routes/home";
 import Calendar from "./routes/calendar";
 import Login from "./routes/login";
@@ -12,6 +12,7 @@ function App() {
     <>
       <Router>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/Mentoring" element={<Mentoring />} />
           <Route path="/write" element={<Write />} />
           <Route path="/Post" element={<Post />} />
