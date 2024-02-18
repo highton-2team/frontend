@@ -16,6 +16,7 @@ function App() {
           <Route path="/Mentoring" element={<Mentoring />} />
           <Route path="/write" element={<Write />} />
           <Route path="/Post" element={<Post />} />
+          <Route path="/calendar" element={<Calendar />} />
         </Routes>
       </Router>
     </>

@@ -60,15 +60,10 @@ const ChatBox = styled.div`
 `;
 
 const ChatList = styled.div`
-<<<<<<< HEAD
-  height: 600px;
-  position: relative;
-=======
   display: flex;
   height: 612px;
   flex-direction: column;
   justify-content: left;
->>>>>>> 0a972288ef0abcf5580b781bff0b910a44913c74
 `;
 
 const Form = styled.form`
@@ -237,10 +232,7 @@ export default function Home() {
   }, []);
   return (
     <>
-<<<<<<< HEAD
-=======
       <Aside />
->>>>>>> 0a972288ef0abcf5580b781bff0b910a44913c74
       <Layout />
       <Wrapper>
         <Main>
