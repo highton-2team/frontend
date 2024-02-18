@@ -27,7 +27,8 @@ const Menu = styled.div`
   width: 100%;
   padding: 16px 16px;
   gap: 30px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #d5d7dd;
+  z-index: 3;
 `;
 
 const MenuItem = styled.div`

@@ -4,6 +4,7 @@ import Message from "../components/message";
 import Task from "../components/task";
 import axios from "axios";
 import Aside from "../components/common/Aside";
+import Layout from "../components/layout";
 
 const Wrapper = styled.div`
   display: flex;
@@ -56,10 +57,8 @@ const ChatBox = styled.div`
 `;
 
 const ChatList = styled.div`
-  display: flex;
   height: 600px;
-  flex-direction: column;
-  justify-content: left;
+  position: relative;
 `;
 
 const Form = styled.form`
@@ -229,7 +228,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <Aside />
+      <Layout />
       <Wrapper>
         <Main>
           <Todo>
