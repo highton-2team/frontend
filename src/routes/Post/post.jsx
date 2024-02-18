@@ -1,5 +1,5 @@
 import * as S from "./style.js";
-import { useNavigate } from "react-router-dom";
+
 
 const Post = () => {
   return (

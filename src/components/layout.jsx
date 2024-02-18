@@ -75,7 +75,7 @@ export default function Layout() {
               </Link>
             </MenuItem>
             <MenuItem>
-              <Link to="/mentoring">
+              <Link to="/Mentoring">
                 <Text>멘토링</Text>
               </Link>
             </MenuItem>
